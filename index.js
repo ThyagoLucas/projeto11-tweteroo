@@ -9,6 +9,9 @@ app.listen(5000, () => {
 app.use(express.json());
 app.use(cors());
 
+
+
+
 const users = [];
 const posts = [
     {
