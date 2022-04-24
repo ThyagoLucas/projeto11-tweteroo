@@ -9,86 +9,20 @@ app.listen(5000, () => {
 app.use(express.json());
 app.use(cors());
 
-
-
-
 const users = [];
-const posts = [
-    {
-	username: "maria1",
-	avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "eu amo o hub",
-    },
-    {
-	username: "maria2",
-	avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "Ola mundo",
-    },
-    {
-    username: "maria3",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "fernandoooo? sério isso?",
-    },
-    {
-    username: "maria4",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "eu amo o hub",
-    },
-    {
-    username: "maria5",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "Ola mundo",
-    },
-    {
-    username: "maria6",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "fernandoooo? sério isso?",
-    },
-    {
-    username: "maria7",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "eu amo o hub",
-    },
-    {
-    username: "maria8",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "Ola mundo",
-    },
-    {
-    username: "maria9",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "fernandoooo? sério isso?",
-    },
-    {
-    username: "maria10",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "eu amo o hub",
-    },
-    {
-    username: "maria11",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "Ola mundo",
-    },
-    {
-    username: "maria12",
-    avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-    tweet: "fernandoooo? sério isso?",
-    },
-];
-
-
+const posts = [];
 app.post("/sign-up", (req, res) => {
     
     const { username, avatar } = req.body;
     users.push({ username, avatar });
-    res.send('ok');
+    res.send('OK');
 });
 
 app.get("/tweets", (req, res)=>{
     let last = lastTen();
     res.send(last);
 
-})
+});
 
 app.post("/tweets", (req, res)=>{
 
@@ -110,15 +44,12 @@ function lastTen(){
                 cont++;
             }
         }
-    }else{
+    }
+    else{
         for(let i = posts.length; i!=0; i--){
             response.push(posts[i-1]);
         }
-       
     }
 
     return response;
- 
 }
-
-
